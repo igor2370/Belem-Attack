@@ -9,4 +9,4 @@ Possui Macro: Não<br>
 Descrição: Extrai dados de uma lista com repetição e ordena-os sem repetição (por índice) com suas respectivas frequências.<br>
 Requisitos: Ter pacote Office instalado.<br>
 Limitações: A lista aceita até 99 registros sem espaços em branco entre os dados.<br>
-Obs: Esta planilha serve como referência para estudos, caso precise fazer uso prático do seu conteúdo com mais de 99 registros, sugiro que utilize macros para não sobrecarregar a memória do seu computador.<br>
+Obs: Esta planilha serve como referência para estudos, caso precise fazer uso prático do seu conteúdo para mais de 99 registros, sugiro que utilize macros para não sobrecarregar a memória do seu computador.<br>
