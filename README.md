@@ -11,5 +11,5 @@ Limitações: A lista aceita até 99 registros sem espaços em branco entre os d
 Obs: Esta planilha serve como referência para estudos, caso precise fazer uso prático do seu conteúdo para mais de 99 registros, sugiro que utilize macros para não sobrecarregar a memória do seu computador.<br><br>
 **002_loteria_em_tempo_real.xlsx**<br>
 Possui Macro: Não<br>
-Descrição: Planilha atualiza em tempo real a cada 15 minutos os resultados das principais loterias do país.<br>
+Descrição: Atualiza sempre que a planilha é aberta os resultados das principais loterias do país.<br>
 Requisitos: Ter pacote Office instalado, possuir conexão com a internet.<br>
