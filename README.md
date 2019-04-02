@@ -12,4 +12,12 @@ Obs: Esta planilha serve como referência para estudos, caso precise fazer uso p
 **002_loteria_em_tempo_real.xlsx**<br>
 Possui Macro: Não<br>
 Descrição: Atualiza sempre que a planilha é aberta os resultados das principais loterias do país.<br>
-Requisitos: Ter pacote Office instalado, possuir conexão com a internet.<br>
+Requisitos: Ter pacote Office instalado, possuir conexão com a internet.<br><br>
+**003_calculo_de_parcela_consorcio.xlsx**<br>
+Possui Macro: Não<br>
+Descrição: Calcula valor de parcela de consórcio.<br>
+Requisitos: Ter pacote Office instalado.<br><br>
+**004_busca_cep.xlsm**<br>
+Possui Macro: Sim<br>
+Descrição: Busca endereço referente ao CEP informado.<br>
+Requisitos: Ter pacote Office instalado, possuir conexão com a internet.<br><br>
