@@ -24,5 +24,5 @@
 <br>
 <br>
 <h3>Funcionamento</h3>
-<p>O programa varre o arquivo em Excel e busca clientes devedores criando listas dividida por gerente comercial,<BR>
+<p>O programa varre o arquivo em Excel e busca clientes devedores criando listas divididas por gerente comercial,<BR>
 e em seguida grava estas listas em arquivos PDFs.</p>
