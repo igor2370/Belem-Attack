@@ -4,29 +4,40 @@ from reportlab.platypus import Table
 from reportlab.platypus import TableStyle
 from reportlab.lib import colors
 from datetime import datetime
-from os import mkdir
+from os import mkdir, path
+
+def filePDF():
+    #cria diretório
+    data = datetime.now().strftime("%d%m%Y-%H%M%S")
+    arquivo ='Gestores'+data
+    mkdir('file/'+arquivo)
+    return str('file/Gestores'+data+'/')
 
 
-def gerarPDF(nome, dados):
-    arquivo =  mkdir('file/gestores '+str(datetime.now()))
-    fileName = str(arquivo)+'/'+str(nome)+'.pdf'
 
-    pdf = SimpleDocTemplate(fileName, pagesize=A4)
+def gerarPDF(nome, dados, fileName):
 
+    #Config pdf
+    pdf = SimpleDocTemplate(fileName + nome+'.pdf', pagesize=A4)
+
+    #cria tabela
     table = Table(dados)
+    
 
-    '''
+    #Config Tabela
+    #========================================================
     #Fonte e cores
     style = TableStyle([
-        ('BACKGROUND', (0,0), (-1,0), colors.cadetblue),
-        ('TEXTCOLOR', (0,0), (-1,0), colors.white),
-        ('ALIGN', (0,0), (-1,0), 'LEFT'),
         ('SPAN', (0,0), (2,0)),
-        ('ALIGN', (0,1), (-1,-1), 'CENTER'),
+        ('SPAN', (0,1), (2,1)),
+        ('BACKGROUND', (0,2), (-1,2), colors.cadetblue),
+        ('TEXTCOLOR', (0,2), (-1,2), colors.white),
+        ('ALIGN', (0,0), (-1,1), 'LEFT'),
+        ('ALIGN', (0,2), (-1,-1), 'CENTER'),
         ('FONTNAME', (0,0), (-1,-1), 'Courier-Bold'),
-        ('FONTSIZE', (0,0), (-1,0), 10),
-        ('FONTSIZE', (0,1), (-1,-1), 8),
-        ('BACKGROUND', (0,1), (-1,-1), colors.beige),
+        ('FONTSIZE', (0,0), (-1,2), 10),
+        ('FONTSIZE', (0,3), (-1,-1), 8),
+        ('BACKGROUND', (0,3), (-1,-1), colors.beige),
 
     ])
 
@@ -35,7 +46,7 @@ def gerarPDF(nome, dados):
     rowNumb = len(dados)
 
     #Cores das linhas alternadas
-    for i in range(1, rowNumb):
+    for i in range(3, rowNumb):
         if i % 2 == 0:
             bc = colors.bisque
         else:
@@ -49,12 +60,17 @@ def gerarPDF(nome, dados):
         ('LINEABOVE', (0,0), (-1,-1), 1, colors.gray)
     ])
     table.setStyle(ts)
+    #========================================================
+    
+    #Grava pdf
+    pdf.build([table])
 
-
-    elems = []
-    elems.append(table)
-
-    pdf.build(elems)
-'''
+  
+ #Teste do módulo 
 if __name__=='__main__':
-    gerarPDF('teste', [(0,0,0,0,0,0,0), (0,0,0,0,0,0,0), (1,1,1,1,1,1,1), (2,2,2,2,2,2,2), (2,2,2,2,2,2,2), (2,2,2,2,2,2,2)])
+    nomeArquivo = filePDF()
+    gerarPDF('teste', [("Gestor","","","","","",""), ("data","","","","","",""), (1,1,1,1,1,1,1), (2,2,2,2,2,2,2), (2,2,2,2,2,2,2), (2,2,2,2,2,2,2)],nomeArquivo)
+
+'''
+
+'''
