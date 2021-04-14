@@ -34,14 +34,14 @@ def loadWB():
 
             #cabeçalho tabela
             dados = [
-                (f'GESTOR: {element}',"","","","",""),
-                (atual,"","","","",""),
-                ('#', 'CLIENTE', 'CPF', 'TELEFONE', 'STATUS', 'VENCIMENTO')]
+                (f'GESTOR: {element}',"","","","","",""),
+                (atual,"","","","","",""),
+                ('#', 'CLIENTE', 'CPF', 'TELEFONE', 'STATUS', 'VENDEDOR', 'VENCIMENTO')]
 
             #cria a lista de dados
             for row in ws.values:
                 if str(row[2]) == '2' and  str(row[9]).strip() == element and  str(row[10]).strip()!='PAGO' and str(row[10]).strip()!='CANCELADO':
-                    dados.append((cont, row[5], row[3], row[6], row[10], "{:%d/%m/%Y}".format(row[12])))
+                    dados.append((cont, row[5], row[3], row[6], row[10], row[8], "{:%d/%m/%Y}".format(row[12])))
                     cont+=1
             gerarPDF(element.replace('/','-'),dados,criaPasta)
                 

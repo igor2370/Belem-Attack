@@ -1,5 +1,5 @@
 from reportlab.platypus import SimpleDocTemplate
-from reportlab.lib.pagesizes import A4
+from reportlab.lib.pagesizes import A4Land
 from reportlab.platypus import Table
 from reportlab.platypus import TableStyle
 from reportlab.lib import colors
@@ -18,7 +18,7 @@ def filePDF():
 def gerarPDF(nome, dados, fileName):
 
     #Config pdf
-    pdf = SimpleDocTemplate(fileName + nome+'.pdf', pagesize=A4)
+    pdf = SimpleDocTemplate(fileName + nome+'.pdf', pagesize=A4Land)
 
     #cria tabela
     table = Table(dados)
